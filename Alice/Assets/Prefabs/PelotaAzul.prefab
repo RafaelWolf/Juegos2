@@ -12,7 +12,7 @@ GameObject:
   - 135: {fileID: 13532742}
   - 23: {fileID: 2339658}
   - 114: {fileID: 11421348}
-  - 54: {fileID: 5492740}
+  - 54: {fileID: 5440944}
   m_Layer: 0
   m_Name: PelotaAzul
   m_TagString: Untagged
@@ -65,7 +65,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138572}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5492740
+--- !u!54 &5440944
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

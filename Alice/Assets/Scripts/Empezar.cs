@@ -4,20 +4,20 @@ using System.Collections;
 public class Empezar : MonoBehaviour {
 	public GameObject spawner1;
 	public GameObject spawner2;
-
+	private 
 	// Use this for initialization
 	void Start () {
-		spawner1.SetActive (false);
-		spawner2.SetActive (false);
+		StopAllCoroutines ();
 	}
 	
 	public void ActivarSpawners(bool active){
+
+
 		if (active) {
-			spawner1.SetActive (true);
-			spawner2.SetActive (true);
+			StopAllCoroutines ();
+
 		} else {
-			spawner1.SetActive (false);
-			spawner2.SetActive (false);
+			//StartCoroutine("");
 		}
 
 

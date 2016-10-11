@@ -14,9 +14,15 @@ public class Spawner : MonoBehaviour {
 	int randEnemy;
 	// Use this for initialization
 	void Start () {
+		//StartCoroutine (waitSpawner());
+	}
+	public void Pararroutines(){
+		StopAllCoroutines ();
+	}
+	public void Startroutines(){
 		StartCoroutine (waitSpawner());
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		spawnWait = Random.Range (spawnLeastWait,spawnMostWait);
@@ -31,9 +37,6 @@ public class Spawner : MonoBehaviour {
 			prefab.transform.parent =  GameObject.Find("Plane").transform;
 			Destroy (prefab,delay);
 			yield return new WaitForSeconds (spawnWait);
-		    
-
-
 
 		}
 	}
