@@ -19,7 +19,7 @@ public class Pintar : MonoBehaviour {
 			Recargar();
 		}
 
-		if ((!recarga == 0)) {
+		if ((recarga != 0)) {
 			if (col.gameObject.tag == "PelotaAzul") {
 				contadorazul++;
 			}
