@@ -11,6 +11,7 @@ public class Spawner : MonoBehaviour {
 	public bool stop;
 	public float delay;
 	public GameObject prefab;
+	public GameObject prefab2;
 	int randEnemy;
 	// Use this for initialization
 	void Start () {
@@ -31,10 +32,10 @@ public class Spawner : MonoBehaviour {
 	IEnumerator waitSpawner(){
 		yield return new WaitForSeconds (startWait);
 		while (!stop) {
-			randEnemy = Random.Range (0,4);
+			randEnemy = Random.Range (0,2);
 			Vector3 spawnPosition = new Vector3 (Random.Range(-spawnValues.x,spawnValues.x),1,Random.Range(-spawnValues.z,spawnValues.z));
 			prefab=Instantiate(enemies[randEnemy],spawnPosition+transform.TransformPoint(0,0,0),gameObject.transform.rotation) as GameObject;
-			prefab.transform.parent =  GameObject.Find("Plane").transform;
+			prefab.transform.parent =  GameObject.Find("Spawn").transform;
 			Destroy (prefab,delay);
 			yield return new WaitForSeconds (spawnWait);
 

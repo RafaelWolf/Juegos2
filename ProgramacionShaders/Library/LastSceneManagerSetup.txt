@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/DT_Scenes/03_Begin.unity
+  isLoaded: 1
+  isActive: 1

@@ -9,7 +9,7 @@ public class MoveRoses : MonoBehaviour {
 	{
 		
 			if (this.canMove) {
-			this.transform.Translate (Vector3.up * this.movementSpeed * Time.deltaTime);
+			this.transform.Translate (Vector3.up* this.movementSpeed * Time.deltaTime);
 			}
 
 

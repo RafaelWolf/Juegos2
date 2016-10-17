@@ -29,6 +29,7 @@ GameObject:
   - 23: {fileID: 2338066}
   - 114: {fileID: 11415130}
   - 135: {fileID: 13520512}
+  - 54: {fileID: 5457314}
   m_Layer: 0
   m_Name: Rosa5R
   m_TagString: Untagged
@@ -184,6 +185,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187996}
   m_Mesh: {fileID: 4300002, guid: eb7a81dcc333b54459f10583f37e14c7, type: 3}
+--- !u!54 &5457314
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125134}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!95 &9528754
 Animator:
   serializedVersion: 3
