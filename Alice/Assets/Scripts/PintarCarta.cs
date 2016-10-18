@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PintarCarta : MonoBehaviour {
 	
-	public  int recargacarta = 0;
+	public static int recargacarta = 0;
 	public int contadorrojascarta = 0;
 	public ParticleSystem ps;
 
@@ -12,7 +12,7 @@ public class PintarCarta : MonoBehaviour {
 		ps.enableEmission = false;
 	}
 	void Update(){
-		recargacarta = recargacarta;
+		recargacarta=recargacarta;
 	}
 
 	void OnCollisionEnter(Collision col) {
