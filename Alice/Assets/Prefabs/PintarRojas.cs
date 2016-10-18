@@ -8,9 +8,15 @@ public class PintarRojas : MonoBehaviour {
 	int counter =0;
     string hex;
 	int bigint,r,g,b;
-	public ParticleSystem ps2;
-	public ParticleSystem pp;
+	private ParticleSystem pp;
 	public GameObject luz;
+	public PintarCarta[] pc;
+	public GameObject[] pc3;
+	public PintarCarta pz;
+	public GameObject pzg;
+
+
+
 
 	Color HexToColor(string hex)
 	{
@@ -22,10 +28,16 @@ public class PintarRojas : MonoBehaviour {
 
 
 	void OnCollisionEnter(Collision other) {
-		Debug.Log("Contact was made!");
-		colourChangeCollision = true;
-		currentDelay = Time.time + colourChangeDelay;
-		counter++;
+		
+		if(other.gameObject.name=="BrochaCarta"){
+			//Debug.Log("Contact was made!");
+			colourChangeCollision = true;
+			currentDelay = Time.time + colourChangeDelay;
+			counter++;
+		}
+
+
+
 	}
 	void checkColourChange()
 	{        
@@ -55,16 +67,20 @@ public class PintarRojas : MonoBehaviour {
 
 		}
 	}
-
 	void Start(){
 		pp= this.GetComponentInChildren<ParticleSystem> ();
 		pp.enableEmission = false;
 		luz.SetActive(false);
+
+
+	
 	}
 	void Update()
 	{	
 		luz.SetActive(false);
 		checkColourChange();
+		pc = pzg.GetComponentsInChildren<PintarCarta> ();
+		Debug.Log ("recargar"+pc[0].recargacarta+"");
 	}
 
 }

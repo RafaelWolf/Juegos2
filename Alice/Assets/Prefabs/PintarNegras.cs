@@ -22,7 +22,7 @@ public class PintarNegras : MonoBehaviour {
 
 
 	void OnCollisionEnter(Collision other) {
-		Debug.Log("Contact was made!");
+		//Debug.Log("Contact was made!");
 		colourChangeCollision = true;
 		currentDelay = Time.time + colourChangeDelay;
 		counter++;

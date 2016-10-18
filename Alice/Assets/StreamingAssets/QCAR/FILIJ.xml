@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Piso2" size="20.000000 13.443192" />
+    <ImageTarget name="tijeras" size="20.000000 30.407080" />
+    <ImageTarget name="reloj" size="20.000000 22.896082" />
     <ImageTarget name="cubeta" size="20.000000 24.008017" />
     <ImageTarget name="Piso" size="20.000000 25.882353" />
     <ImageTarget name="brocha" size="20.000000 20.000000" />
