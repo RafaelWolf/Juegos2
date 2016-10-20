@@ -12,10 +12,7 @@ public class PintarRojas : MonoBehaviour {
 	public GameObject luz;
 	public static int recargaCA;
 	public GameObject[] pc3;
-
 	public GameObject pzg;
-
-
 
 
 	Color HexToColor(string hex)
@@ -71,9 +68,6 @@ public class PintarRojas : MonoBehaviour {
 		pp= this.GetComponentInChildren<ParticleSystem> ();
 		pp.enableEmission = false;
 		luz.SetActive(false);
-
-	
-	
 	}
 	void Update()
 	{	

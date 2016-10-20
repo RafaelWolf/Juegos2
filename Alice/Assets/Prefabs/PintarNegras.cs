@@ -11,6 +11,9 @@ public class PintarNegras : MonoBehaviour {
 	public ParticleSystem ps2,ps3;
 	public ParticleSystem[] p;
 	public GameObject explosion; 
+	public static int recargaCA2;
+	public GameObject[] pc4;
+	public GameObject pzg2;
 
 	Color HexToColor(string hex)
 	{
@@ -23,9 +26,12 @@ public class PintarNegras : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other) {
 		//Debug.Log("Contact was made!");
-		colourChangeCollision = true;
-		currentDelay = Time.time + colourChangeDelay;
-		counter++;
+		if(other.gameObject.name=="BrochaCarta" && recargaCA2>0){
+			colourChangeCollision = true;
+			currentDelay = Time.time + colourChangeDelay;
+			counter++;	
+		}
+
 	}
 	void checkColourChange()
 	{        
@@ -34,54 +40,36 @@ public class PintarNegras : MonoBehaviour {
 
 			if (counter == 1) {
 				transform.GetComponent<Renderer> ().material.color = HexToColor("83000D");
-				//ps2.startColor =HexToColor("DB0017");
-			//	ps2.enableEmission = true;
 				p[0].startColor=HexToColor("83000D");
 				p [0].enableEmission = true;
 			}
 			if (counter == 2) {
 				transform.GetComponent<Renderer> ().material.color = HexToColor("000000");
-			//	ps2.startColor =HexToColor("83000D");
-			//	ps2.enableEmission = true;
 				p[0].startColor=HexToColor("000000");
 				p [0].enableEmission = true;
 			}
-
-			/*
-			if (counter <= 3) {
-				transform.GetComponent<Renderer> ().material.color = Color.yellow;
-				if (Time.time > currentDelay) {
-					transform.GetComponent<Renderer> ().material.color = Color.white;
-					colourChangeCollision = false;
-				}
-			}*/
-
-
+				
 			if (counter >= 3) {
 				p[0].startColor=HexToColor("FFFFFF");
 				p [0].enableEmission = true;
-			//	ps2.startColor = Color.gray;
-			//	ps2.enableEmission = true;
 				transform.GetComponent<Renderer> ().material.color = Color.black;
 				GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
 				Destroy(gameObject); // destroy the grenade
 				Destroy(expl, 3); // delete the explosion after 3 seconds
 
 			}
+
 		}
 	}
 
-	void Start(){
-		
-	}
+
 	void Update()
 	{	
-		//ps2 = this.GetComponentInChildren<ParticleSystem> ();
-		//ps2.enableEmission = false;
+
 		p = GetComponentsInChildren<ParticleSystem> ();
 		p [0].enableEmission = false;
-		//p [1].enableEmission = false;
 
+		recargaCA2 = PintarCarta.recargacarta;
 
 		checkColourChange();
 	}

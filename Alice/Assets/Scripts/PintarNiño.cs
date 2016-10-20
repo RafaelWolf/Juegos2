@@ -3,18 +3,17 @@ using System.Collections;
 
 public class PintarNiño : MonoBehaviour {
 	
-	public  int recarganiño = 0;
+	public static int recarganiño = 0;
 	public int contadorrojasniño = 0;
 	public ParticleSystem ps;
-
 
 	void Start(){
 		ps = this.GetComponentInChildren<ParticleSystem> ();
 		ps.enableEmission = false;
 	}
+
 	void OnCollisionEnter(Collision col) {
 		
-
 		if (recarganiño <= 0 && ((col.gameObject.name == "PetalosR")||(col.gameObject.name == "PetalosB")))	{
 			Debug.Log ("recarganiño puto");
 			ps.enableEmission = false;
@@ -43,19 +42,12 @@ public class PintarNiño : MonoBehaviour {
 			ps.enableEmission = true;
 		}
 	   	Debug.Log ("Marcador"+contadorrojasniño.ToString());
-
-
 	}
-
+	void Update(){
+		recarganiño=recarganiño;
+	}
 	public void Recargar(){
 		recarganiño = 10;
 	}
-
-
-
-
-
-
-
 
 }

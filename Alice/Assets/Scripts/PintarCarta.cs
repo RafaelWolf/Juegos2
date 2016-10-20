@@ -6,7 +6,6 @@ public class PintarCarta : MonoBehaviour {
 	public static int recargacarta = 0;
 	public int contadorrojascarta = 0;
 	public ParticleSystem ps;
-
 	void Start(){
 		ps = this.GetComponentInChildren<ParticleSystem> ();
 		ps.enableEmission = false;
@@ -14,7 +13,6 @@ public class PintarCarta : MonoBehaviour {
 	void Update(){
 		recargacarta=recargacarta;
 	}
-
 	void OnCollisionEnter(Collision col) {
 		
 
@@ -38,8 +36,7 @@ public class PintarCarta : MonoBehaviour {
 			//	Debug.Log ("LEDISTEBLANCO:"+contadorrojascarta.ToString()+"Municion"+recargacarta.ToString());
 			}
 		}
-		
-//		Debug.Log ("Nombre"+col.gameObject.name.ToString());
+
 		if(col.gameObject.name=="CubetaCarta"){
 			Recargar();
 			//Debug.Log ("MUNICION RECARGADA 100%");
