@@ -13,24 +13,17 @@ public class PintarNiño : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col) {
-		
-		if (recarganiño <= 0 && ((col.gameObject.name == "PetalosR")||(col.gameObject.name == "PetalosB")))	{
+		if (recarganiño <= 0 && ((col.gameObject.name == "PetalosB"))){
 			Debug.Log ("recarganiño puto");
 			ps.enableEmission = false;
 		}
 
-		if ((recarganiño > 0)) {
-			if ((col.gameObject.name == "PetalosB")) {
-				contadorrojasniño++;
-				recarganiño--;
-				Debug.Log ("LEDISTEROJO:"+contadorrojasniño.ToString()+"Municion"+recarganiño.ToString());
-			}
+		if(recarganiño > 0){
 			if ((col.gameObject.name == "PetalosR")) {
 				contadorrojasniño--;
 				recarganiño--;
 				if (contadorrojasniño < 0)
 					contadorrojasniño = 0;
-
 				Debug.Log ("LEDISTEBLANCO:"+contadorrojasniño.ToString()+"Municion"+recarganiño.ToString());
 			}
 		}

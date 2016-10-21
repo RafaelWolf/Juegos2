@@ -75,19 +75,19 @@ public class PintarRojas : MonoBehaviour {
 		{
 
 			if (counterCA == 1) {
-				transform.GetComponent<Renderer> ().material.color = HexToColor("F6E5E7");
-				pp.startColor =HexToColor("F6E5E7");
+				transform.GetComponent<Renderer> ().material.color = HexToColor("FFB0B0FF");
+				pp.startColor =new Color (255f/255f,255f/255f,255f/255f,0.1f);
 				pp.enableEmission = true;
 			}
 			if (counterCA == 2) {
-				transform.GetComponent<Renderer> ().material.color = HexToColor("DC99A1");
-				pp.startColor =HexToColor("DC99A1");
+				transform.GetComponent<Renderer> ().material.color = HexToColor("FF7B7BFF");
+				pp.startColor =new Color (255f/255f,50f/255f,50f/255f,0.1f);
 			
 				pp.enableEmission = true;
 			}
 		
 			if (counterCA >= 3) {
-				pp.startColor = Color.red;
+				pp.startColor =  new Color (255/255f,0f,0f,0.1f);
 				pp.enableEmission = true;
 				transform.GetComponent<Renderer> ().material.color = Color.red;
 				luz.SetActive(true); 

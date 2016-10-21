@@ -13,38 +13,29 @@ public class PintarCarta : MonoBehaviour {
 	}
 	void Update(){
 		recargacarta=recargacarta;
-	
+		Debug.Log("Recarga"+recargacarta);
 	}
 	void OnCollisionEnter(Collision col) {
 		
 
-		if (recargacarta<= 0 && ((col.gameObject.name == "PetalosR")||(col.gameObject.name == "PetalosB")))	{
-			//Debug.Log ("recargacartaputo");
+		if (recargacarta<= 0 && (col.gameObject.name == "PetalosB"))	{
 			ps.enableEmission = false;
 		}
 
-		if ((recargacarta> 0)) {
+		if(recargacarta> 0) {
 			if ((col.gameObject.name == "PetalosB")) {
-				contadorrojascarta++;
-				recargacarta--;
-			//	Debug.Log ("LEDISTEROJO:"+contadorrojascarta.ToString()+"Municion"+recargacarta.ToString());
-			}
-			if ((col.gameObject.name == "PetalosR")) {
 				contadorrojascarta--;
 				recargacarta--;
 				if (contadorrojascarta < 0)
 					contadorrojascarta = 0;
-
-			//	Debug.Log ("LEDISTEBLANCO:"+contadorrojascarta.ToString()+"Municion"+recargacarta.ToString());
+				if (recargacarta < 0)
+					recargacarta = 0;
 			}
 		}
-
 		if(col.gameObject.name=="CubetaCarta"){
 			Recargar();
-			//Debug.Log ("MUNICION RECARGADA 100%");
 			ps.enableEmission = true;
 		}
-   	//Debug.Log ("Marcador"+contadorrojascarta.ToString());
 
 	}
 
