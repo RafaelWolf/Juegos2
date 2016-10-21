@@ -4,13 +4,16 @@ using System.Collections;
 public class PintarRojas : MonoBehaviour {
 	public float colourChangeDelay = 1f;
 	float currentDelay = 0f;
-	bool colourChangeCollision = false;
-	int counter =0;
+	bool colourChangeCollisionCA = false;
+	bool colourChangeCollisionNI = false;
+    int counterCA =0;
+	int counterNI=0;
     string hex;
 	int bigint,r,g,b;
 	private ParticleSystem pp;
 	public GameObject luz;
 	public static int recargaCA;
+	public static int recargaNI;
 	public GameObject[] pc3;
 	public GameObject pzg;
 
@@ -23,59 +26,92 @@ public class PintarRojas : MonoBehaviour {
 		return new Color32(r,g,b, 255);
 	}
 
-
 	void OnCollisionEnter(Collision other) {
 		
 		if(other.gameObject.name=="BrochaCarta" && recargaCA>0){
-			//Debug.Log("Contact was made!");
-			colourChangeCollision = true;
+			colourChangeCollisionCA = true;
 			currentDelay = Time.time + colourChangeDelay;
-			counter++;
+			counterCA++;
 		}
 
+		else if(other.gameObject.name=="Brocha" && recargaNI>0){
+			colourChangeCollisionNI = true;
+			currentDelay = Time.time + colourChangeDelay;
+			counterNI++;
+		}
 
-
+			
 	}
-	void checkColourChange()
+	void checkColourChangeNI()
 	{        
-		if(colourChangeCollision)
+		if(colourChangeCollisionNI)
 		{
 
-			if (counter == 1) {
-				transform.GetComponent<Renderer> ().material.color = HexToColor("FFC6C8");
-				pp.startColor =HexToColor("FFC6C8");
+			if (counterNI == 1) {
+				transform.GetComponent<Renderer> ().material.color = HexToColor("FFB0B0FF");
+				pp.startColor =new Color (255f/255f,255f/255f,255f/255f,0.1f);
 				pp.enableEmission = true;
 			}
-			if (counter == 2) {
-				transform.GetComponent<Renderer> ().material.color = HexToColor("FFA0A4");
-				pp.startColor =HexToColor("FFA0A4");
+			if (counterNI == 2) {
+				transform.GetComponent<Renderer> ().material.color = HexToColor("FF7B7BFF");
+				pp.startColor = new Color (255f/255f,50f/255f,50f/255f,0.1f);
+			
+				pp.enableEmission = true;
+			}
+			if (counterNI >= 3) {
+				pp.startColor = new Color (255/255f,0f,0f,0.1f);
+				pp.enableEmission = true;
+				transform.GetComponent<Renderer> ().material.color = Color.red;
+				luz.SetActive(true); 
+				Destroy (gameObject,5f);
+			}
+
+		}
+	}
+
+	void checkColourChangeCA()
+	{        
+		if(colourChangeCollisionCA)
+		{
+
+			if (counterCA == 1) {
+				transform.GetComponent<Renderer> ().material.color = HexToColor("F6E5E7");
+				pp.startColor =HexToColor("F6E5E7");
+				pp.enableEmission = true;
+			}
+			if (counterCA == 2) {
+				transform.GetComponent<Renderer> ().material.color = HexToColor("DC99A1");
+				pp.startColor =HexToColor("DC99A1");
+			
 				pp.enableEmission = true;
 			}
 		
-			if (counter >= 3) {
+			if (counterCA >= 3) {
 				pp.startColor = Color.red;
 				pp.enableEmission = true;
 				transform.GetComponent<Renderer> ().material.color = Color.red;
 				luz.SetActive(true); 
 				Destroy (gameObject,5f);
-			
+		
 			}
 		
-
 		}
 	}
+		
 	void Start(){
 		pp= this.GetComponentInChildren<ParticleSystem> ();
 		pp.enableEmission = false;
 		luz.SetActive(false);
 	}
+
 	void Update()
 	{	
-		luz.SetActive(false);
-		checkColourChange();
-		//pc = pzg.GetComponentsInChildren<BrochaCarta> ();
+		//luz.SetActive(false);
+		checkColourChangeCA();
+		checkColourChangeNI();
 		recargaCA=PintarCarta.recargacarta;
-		Debug.Log ("recarga"+recargaCA+"");
+		recargaNI = PintarNiño.recarganiño;
+		Debug.Log ("recargaNI"+recargaNI+"");
 	}
 
 }

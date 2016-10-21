@@ -25,7 +25,7 @@ public class PintarNegrasN : MonoBehaviour {
 	void OnCollisionEnter(Collision other) {
 		//Debug.Log("Contact was made!");
 
-		if(other.gameObject.name=="BrochaCarta" && recargaNI>0){
+		if(other.gameObject.name=="Brocha" && recargaNI>0){
 			colourChangeCollision = true;
 			currentDelay = Time.time + colourChangeDelay;
 			counter++;

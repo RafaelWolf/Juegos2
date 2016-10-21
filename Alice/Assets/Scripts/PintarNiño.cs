@@ -36,7 +36,7 @@ public class PintarNiño : MonoBehaviour {
 		}
 		
 		Debug.Log ("Nombre"+col.gameObject.name.ToString());
-		if(col.gameObject.name=="CubetaCarta"){
+		if(col.gameObject.name=="Cubeta"){
 			Recargar();
 			Debug.Log ("MUNICION RECARGADA 100%");
 			ps.enableEmission = true;
@@ -47,7 +47,7 @@ public class PintarNiño : MonoBehaviour {
 		recarganiño=recarganiño;
 	}
 	public void Recargar(){
-		recarganiño = 10;
+		recarganiño = 100000;
 	}
 
 }

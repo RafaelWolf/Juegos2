@@ -4,14 +4,16 @@ using System.Collections;
 public class PintarCarta : MonoBehaviour {
 	
 	public static int recargacarta = 0;
-	public int contadorrojascarta = 0;
+	public static int contadorrojascarta = 0;
 	public ParticleSystem ps;
+
 	void Start(){
 		ps = this.GetComponentInChildren<ParticleSystem> ();
 		ps.enableEmission = false;
 	}
 	void Update(){
 		recargacarta=recargacarta;
+	
 	}
 	void OnCollisionEnter(Collision col) {
 		
