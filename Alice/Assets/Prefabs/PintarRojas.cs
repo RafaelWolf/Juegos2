@@ -8,6 +8,9 @@ public class PintarRojas : MonoBehaviour {
 	bool colourChangeCollisionNI = false;
     int counterCA =0;
 	int counterNI=0;
+	int totalN = 0;
+	int totalC=0;
+
     string hex;
 	int bigint,r,g,b;
 	private ParticleSystem pp;
@@ -64,6 +67,9 @@ public class PintarRojas : MonoBehaviour {
 				transform.GetComponent<Renderer> ().material.color = Color.red;
 				luz.SetActive(true); 
 				Destroy (gameObject,5f);
+
+				PintarNiño.contadorrojasnino++;
+
 			}
 
 		}
@@ -92,7 +98,8 @@ public class PintarRojas : MonoBehaviour {
 				transform.GetComponent<Renderer> ().material.color = Color.red;
 				luz.SetActive(true); 
 				Destroy (gameObject,5f);
-		
+				PintarCarta.contadorrojascarta++;
+
 			}
 		
 		}
@@ -111,7 +118,7 @@ public class PintarRojas : MonoBehaviour {
 		checkColourChangeNI();
 		recargaCA=PintarCarta.recargacarta;
 		recargaNI = PintarNiño.recarganiño;
-		Debug.Log ("recargaNI"+recargaNI+"");
+//		Debug.Log ("recargaNI"+recargaNI+"");
 	}
 
 }

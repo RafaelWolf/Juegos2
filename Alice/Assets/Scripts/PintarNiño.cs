@@ -4,7 +4,7 @@ using System.Collections;
 public class PintarNiño : MonoBehaviour {
 	
 	public static int recarganiño = 0;
-	public int contadorrojasniño = 0;
+	public static int contadorrojasnino = 0;
 	public ParticleSystem ps;
 
 	void Start(){
@@ -20,11 +20,10 @@ public class PintarNiño : MonoBehaviour {
 
 		if(recarganiño > 0){
 			if ((col.gameObject.name == "PetalosR")) {
-				contadorrojasniño--;
+
 				recarganiño--;
-				if (contadorrojasniño < 0)
-					contadorrojasniño = 0;
-				Debug.Log ("LEDISTEBLANCO:"+contadorrojasniño.ToString()+"Municion"+recarganiño.ToString());
+			
+				Debug.Log ("Municion"+recarganiño.ToString());
 			}
 		}
 		
@@ -34,7 +33,7 @@ public class PintarNiño : MonoBehaviour {
 			Debug.Log ("MUNICION RECARGADA 100%");
 			ps.enableEmission = true;
 		}
-	   	Debug.Log ("Marcador"+contadorrojasniño.ToString());
+	   
 	}
 	void Update(){
 		recarganiño=recarganiño;

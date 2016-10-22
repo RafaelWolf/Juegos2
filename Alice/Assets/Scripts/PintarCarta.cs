@@ -13,7 +13,7 @@ public class PintarCarta : MonoBehaviour {
 	}
 	void Update(){
 		recargacarta=recargacarta;
-		Debug.Log("Recarga"+recargacarta);
+		//Debug.Log("Recarga"+recargacarta);
 	}
 	void OnCollisionEnter(Collision col) {
 		
@@ -24,10 +24,8 @@ public class PintarCarta : MonoBehaviour {
 
 		if(recargacarta> 0) {
 			if ((col.gameObject.name == "PetalosB")) {
-				contadorrojascarta--;
 				recargacarta--;
-				if (contadorrojascarta < 0)
-					contadorrojascarta = 0;
+			
 				if (recargacarta < 0)
 					recargacarta = 0;
 			}
@@ -40,7 +38,7 @@ public class PintarCarta : MonoBehaviour {
 	}
 
 	public void Recargar(){
-		recargacarta= 10;
+		recargacarta= 60;
 	}
 
 
