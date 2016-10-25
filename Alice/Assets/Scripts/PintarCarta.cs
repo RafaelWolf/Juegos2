@@ -38,7 +38,7 @@ public class PintarCarta : MonoBehaviour {
 	}
 
 	public void Recargar(){
-		recargacarta= 60;
+		recargacarta= 10000;
 	}
 
 

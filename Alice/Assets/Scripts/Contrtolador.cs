@@ -28,8 +28,19 @@ public class Contrtolador : MonoBehaviour {
 			PararJuego ();
 			Comparacion ();
 		}
+		if (Time.time > 25f) {
+			incrementarVelocidad ();
+			sp [0].setValues (0f,1f,1f);
+			sp [1].setValues (0f,1f,1f);
+		}
+
 
 	}
+	void incrementarVelocidad(){
+
+	}
+
+
 	void PararJuego(){
 			
 			sp[0].Pararroutines ();
@@ -45,13 +56,14 @@ public class Contrtolador : MonoBehaviour {
 		if(PintarCarta.contadorrojascarta>PintarNiño.contadorrojasnino){
 			anim.SetBool ("ganar",true);
 			fuegosartificiales [0].SetActive(true);
-			Debug.Log ("CartaGano");
+			Debug.Log ("CartaGano"+PintarCarta.contadorrojascarta.ToString());
 		}
 
 		else {
 			anim.SetBool ("ganar", false);
 			fuegosartificiales [1].SetActive(true);
-			Debug.Log ("Perdio");
+			Debug.Log ("CartaPerdio"+PintarCarta.contadorrojascarta.ToString());
+
 		}
 			
 			

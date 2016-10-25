@@ -67,8 +67,8 @@ public class PintarRojas : MonoBehaviour {
 				transform.GetComponent<Renderer> ().material.color = Color.red;
 				luz.SetActive(true); 
 				Destroy (gameObject,5f);
-
-				PintarNiño.contadorrojasnino++;
+				counterNI = 0;
+				Debug.Log("PintarNino"+PintarNiño.contadorrojasnino++);
 
 			}
 
@@ -98,8 +98,8 @@ public class PintarRojas : MonoBehaviour {
 				transform.GetComponent<Renderer> ().material.color = Color.red;
 				luz.SetActive(true); 
 				Destroy (gameObject,5f);
-				PintarCarta.contadorrojascarta++;
-
+				counterCA = 0;
+				Debug.Log("PintarCarta"+PintarCarta.contadorrojascarta++);
 			}
 		
 		}

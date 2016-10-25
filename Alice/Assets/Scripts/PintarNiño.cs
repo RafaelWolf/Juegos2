@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PintarNiño : MonoBehaviour {
 	
-	public static int recarganiño = 0;
+	public static int recarganiño = 100000;
 	public static int contadorrojasnino = 0;
 	public ParticleSystem ps;
 

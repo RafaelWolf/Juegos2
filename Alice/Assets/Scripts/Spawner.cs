@@ -24,6 +24,13 @@ public class Spawner : MonoBehaviour {
 		StartCoroutine (waitSpawner());
 	}
 
+	public void setValues(float sp1,float sp2,float sp3){
+		spawnMostWait = sp1;
+		spawnMostWait = sp2;
+		spawnLeastWait = sp3;
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 		spawnWait = Random.Range (spawnLeastWait,spawnMostWait);
