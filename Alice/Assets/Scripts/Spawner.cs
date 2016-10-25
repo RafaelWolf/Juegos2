@@ -30,6 +30,10 @@ public class Spawner : MonoBehaviour {
 		spawnLeastWait = sp3;
 
 	}
+	public void EliminarEnemigos(){
+		Destroy (prefab);
+
+	}
 
 	// Update is called once per frame
 	void Update () {

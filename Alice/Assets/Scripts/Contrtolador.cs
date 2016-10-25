@@ -30,14 +30,14 @@ public class Contrtolador : MonoBehaviour {
 		}
 		if (Time.time > 25f) {
 			incrementarVelocidad ();
-			sp [0].setValues (0f,1f,1f);
-			sp [1].setValues (0f,1f,1f);
+		
 		}
 
 
 	}
 	void incrementarVelocidad(){
-
+		sp [0].setValues (0f,1f,1f);
+		sp [1].setValues (0f,1f,1f);
 	}
 
 
