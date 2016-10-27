@@ -5,7 +5,7 @@ public class Contrtolador : MonoBehaviour {
 	public GameObject brochacartacontrol,brochaninocontrol;
 	public GameObject[] fuegosartificiales;
 	public GameObject spawner,spawner2;
-
+	public GameObject bdesp,cdesp;
 	private Spawner[] sp;
 	//
 	//
@@ -14,7 +14,8 @@ public class Contrtolador : MonoBehaviour {
 		//brochacartacontrol = GameObject.Find ("brochacartacontrol");
 		//brochaninocontrol = GameObject.Find ("brochaninocontrol");
 		sp = GameObject.Find ("Plane").GetComponentsInChildren<Spawner>();
-
+		bdesp = GameObject.Find ("BrochaCarta");
+		cdesp = GameObject.Find ("CubetaCarta");
 		fuegosartificiales [0].SetActive (false);
 		fuegosartificiales [1].SetActive (false);
 		sp[0].Startroutines ();
@@ -54,12 +55,16 @@ public class Contrtolador : MonoBehaviour {
 	void Comparacion(){
 		Animator anim=GameObject.Find ("N").GetComponent<Animator>();
 		if(PintarCarta.contadorrojascarta>PintarNiño.contadorrojasnino){
+			bdesp.SetActive (false);
+			cdesp.SetActive (false);
 			anim.SetBool ("ganar",true);
 			fuegosartificiales [0].SetActive(true);
 			Debug.Log ("CartaGano"+PintarCarta.contadorrojascarta.ToString());
 		}
 
 		else {
+			bdesp.SetActive (false);
+			cdesp.SetActive (false);
 			anim.SetBool ("ganar", false);
 			fuegosartificiales [1].SetActive(true);
 			Debug.Log ("CartaPerdio"+PintarCarta.contadorrojascarta.ToString());

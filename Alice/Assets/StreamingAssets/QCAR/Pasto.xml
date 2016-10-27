@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Borrego" size="25.000000 24.066002" />
+    <ImageTarget name="RelojGris" size="25.000000 32.857143" />
+    <ImageTarget name="RelojAm" size="25.000000 29.816513" />
+    <ImageTarget name="BrochaA" size="25.000000 24.436937" />
+    <ImageTarget name="Brocharara" size="25.000000 24.614962" />
     <ImageTarget name="BrochaZ" size="25.000000 24.679829" />
     <ImageTarget name="BrochaDesv" size="25.000000 24.679829" />
     <ImageTarget name="14813721_1867427523543617_2005731528_n" size="25.000000 24.679829" />

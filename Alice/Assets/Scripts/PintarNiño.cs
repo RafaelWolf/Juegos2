@@ -9,7 +9,7 @@ public class PintarNiño : MonoBehaviour {
 
 	void Start(){
 		ps = this.GetComponentInChildren<ParticleSystem> ();
-		ps.enableEmission = false;
+		ps.enableEmission = true;
 	}
 
 	void OnCollisionEnter(Collision col) {
